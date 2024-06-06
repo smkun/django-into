@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Company List</title>
+</head>
+<body>
+    <h1>Company List</h1>
+    <ul>
+        {% for company in companies %}
+            <li>{{ company.name }} <a href="{% url 'company_edit' company.id %}">Edit</a> <a href="{% url 'company_delete' company.id %}">Delete</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'company_add' %}">Add Company</a>
+</body>
+</html>
